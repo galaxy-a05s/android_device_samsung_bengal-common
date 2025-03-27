@@ -36,6 +36,7 @@ TARGET_NO_BOOTLOADER := true
 
 # Making the recovery.img smaller
 BOARD_HAS_NO_REAL_SDCARD := true
+TW_EXCLUDE_LPDUMP := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := bengal
