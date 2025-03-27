@@ -34,6 +34,9 @@ TARGET_USES_64_BIT_BINDER := true
 TARGET_BOARD_SUFFIX := _64
 TARGET_NO_BOOTLOADER := true
 
+# Making the recovery.img smaller
+BOARD_HAS_NO_REAL_SDCARD := true
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := bengal
 TARGET_BOARD_PLATFORM := bengal
