@@ -29,8 +29,8 @@ TARGET_IS_64_BIT := true
 TARGET_USES_64_BIT_BINDER := true
 TARGET_BOARD_SUFFIX := _64
 TARGET_NO_BOOTLOADER := true
-TW_Y_OFFSET := 80
-TW_H_OFFSET := -80
+#TW_Y_OFFSET := 80
+#TW_H_OFFSET := -80
 
 # Making the recovery.img smaller
 BOARD_HAS_NO_REAL_SDCARD := true
