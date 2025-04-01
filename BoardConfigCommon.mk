@@ -26,10 +26,11 @@ TARGET_IS_64_BIT := true
 TARGET_USES_64_BIT_BINDER := true
 TARGET_BOARD_SUFFIX := _64
 TARGET_NO_BOOTLOADER := true
+TW_Y_OFFSET := 80
+TW_H_OFFSET := -80
 
 # Making the recovery.img smaller
 BOARD_HAS_NO_REAL_SDCARD := true
-TW_EXCLUDE_LPDUMP := true
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := bengal
@@ -51,6 +52,9 @@ TARGET_SCREEN_WIDTH := 2400
 #TW_CUSTOM_CPU_POS := 580
 TW_CUSTOM_CLOCK_POS := 250
 #TW_CUSTOM_BATTERY_POS := 800
+TW_BRIGHTNESS_PATH := "/sys/class/backlight/panel0-backlight/brightness"
+TW_MAX_BRIGHTNESS := 306
+TW_DEFAULT_BRIGHTNESS := 255
 
 # Cmdline
 BOARD_KERNEL_CMDLINE := video=vfb:640x400,bpp=32,memsize=3072000 firmware_class.path=/vendor/firmware_mnt/image printk.devkmsg=on bootconfig androidboot.hardware=qcom androidboot.memcg=1 androidboot.load_modules_parallel=true androidboot.usbcontroller=4e00000.dwc3 loop.max_part=7
@@ -117,6 +121,8 @@ TARGET_RECOVERY_QCOM_RTC_FIX := true
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+TARGET_USES_MKE2FS := true 
+TW_INCLUDE_NTFS_3G := true 
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -132,9 +138,6 @@ VENDOR_SECURITY_PATCH := 2099-12-31
 PLATFORM_VERSION := 14
 
 # Encryption & Misc
-#TW_INCLUDE_CRYPTO := true
-#TW_INCLUDE_CRYPTO_FBE := false
-TW_FORCE_KEYMASTER_VER := true
 BOARD_USES_METADATA_PARTITION := true
 BOARD_USES_QCOM_FBE_DECRYPTION := true
 
@@ -155,7 +158,8 @@ TW_PREPARE_DATA_MEDIA_EARLY := true
 TW_INCLUDE_LIBRESETPROP := true
 TW_NO_LEGACY_PROPS := true
 TW_USE_NEW_MINADBD := true
-TW_MAX_BRIGHTNESS := 200
+TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
+TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone50/temp"
 
 # Logging
 TARGET_USES_LOGD := true
@@ -170,9 +174,6 @@ TARGET_COPY_OUT_SYSTEM := system
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
 TARGET_COPY_OUT_VENDOR := vendor
 TARGET_COPY_OUT_PRODUCT := product
-
-# APEX
-DEXPREOPT_GENERATE_APEX_IMAGE := true
 
 # Treble
 PRODUCT_ENFORCE_VINTF_MANIFEST := true
