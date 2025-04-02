@@ -166,12 +166,13 @@ TW_USE_NEW_MINADBD := true
 TW_INCLUDE_LPDUMP := true
 TW_INCLUDE_LPTOOLS := true
 TW_INCLUDE_REPACKTOOLS := true
+TW_USE_SAMSUNG_HAPTICS := true
+TW_USE_MODEL_HARDWARE_ID_FOR_DEVICE_ID := true
 #TARGET_USE_CUSTOM_LUN_FILE_PATH := /config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone26/temp"
 
 # Modules 
 TW_LOAD_VENDOR_BOOT_MODULES := true
-# Kernel Modules
 TW_LOAD_VENDOR_MODULES := $(shell echo \"$(shell ls $(DEVICE_PATH)/recovery/root/lib/modules) $(shell ls $(DEVICE_PATH)/recovery/root/vendor/lib/modules)\")
 
 # Logging
